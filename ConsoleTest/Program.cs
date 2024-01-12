@@ -2,8 +2,6 @@
 
 
 using SeedData;
-using SeedData.Models;
-using System.Linq;
 
 
 var cats = GetData.GetCategories(GetData.GetCustomers());
