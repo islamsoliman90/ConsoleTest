@@ -17,22 +17,25 @@ namespace SeedData
         public static List<CustomerCategory> GetCategories(IEnumerable<Customer> customers)
         {
             List<CustomerCategory> categories = new List<CustomerCategory>();
-            categories.Add(new CustomerCategory() { 
-                Id = 1, 
-                Name = "normal", 
+            categories.Add(new CustomerCategory()
+            {
+                Id = 1,
+                Name = "normal",
                 customer = from cust in customers
                            where cust.categoryId == 1
                            select cust
             });
-            categories.Add(new CustomerCategory() { 
-                Id = 2, 
+            categories.Add(new CustomerCategory()
+            {
+                Id = 2,
                 Name = "VIP",
                 customer = from cust in customers
                            where cust.categoryId == 2
                            select cust
             });
-            categories.Add(new CustomerCategory() { 
-                Id = 3, 
+            categories.Add(new CustomerCategory()
+            {
+                Id = 3,
                 Name = "Blocked",
                 customer = from cust in customers
                            where cust.categoryId == 3
@@ -42,9 +45,9 @@ namespace SeedData
         }
 
         public static List<Customer> GetCustomers()
-        { 
+        {
             List<Customer> customers = new List<Customer>();
-            customers.Add(new Customer { id = 101, name = "ahmed mohmed", age = 30 , isActive = true , joinDate = new DateTime(2022, 10, 15), categoryId = 1, spendAverage = 1500.9m, telephone = 123456789  });
+            customers.Add(new Customer { id = 101, name = "ahmed mohmed", age = 30, isActive = true, joinDate = new DateTime(2022, 10, 15), categoryId = 1, spendAverage = 1500.9m, telephone = 123456789 });
             customers.Add(new Customer { id = 102, name = "salah ahmed", age = 32, isActive = false, joinDate = new DateTime(2023, 1, 3), categoryId = 1, spendAverage = 2500.9m, telephone = 987654321 });
             customers.Add(new Customer { id = 103, name = "mahoude samy", age = 22, isActive = true, joinDate = new DateTime(2023, 5, 17), categoryId = 2, spendAverage = 3000.0m, telephone = 741852963 });
             customers.Add(new Customer { id = 104, name = "mostafa kamel", age = 27, isActive = true, joinDate = new DateTime(2022, 8, 30), categoryId = 1, spendAverage = 4500.11m, telephone = 369852147 });
@@ -59,10 +62,10 @@ namespace SeedData
             return customers;
         }
 
-        public static List<Order> GetOrders()
-        {
-            List<Order> orders = new List<Order>();  
-            return orders;
-        }
+        //public static List<Order> GetOrders()
+        //{
+        //    List<Order> orders = new List<Order>();
+        //    return orders;
+        //}
     }
 }
